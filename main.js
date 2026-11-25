@@ -109,7 +109,7 @@
     tms: {
       num: '04', title: 'TMS for TxDev Systems', plate: ['#1d5577', '#0a1d2c'],
       lead: 'TxDev Systems came to our team with a brief, and six of us built them an Android app for keeping an eye on their temperature sensors: live readings, history charts, reports and push alerts when something goes wrong. TxDev’s customers use it.',
-      meta: [['Client', 'TxDev Systems, in use'], ['Team', 'Six students, built free of charge'], ['When', 'Jul – Nov 2025'], ['Stack', 'Kotlin, MVVM, Retrofit, FCM']],
+      meta: [['Client', 'TxDev Systems, in use'], ['Team', 'Six students, built free of charge'], ['When', 'Jun – Dec 2025'], ['Stack', 'Kotlin, MVVM, Retrofit, FCM']],
       problem: 'Temperature-sensitive stock can spoil within hours if a unit warms up or a door is left open overnight. TxDev’s IoT units already collected the readings, but customers needed to check on their units from anywhere and hear about a problem as soon as it happened, not the next morning. TxDev approached our team, and we built the app free of charge against their real backend.',
       did: [
         'Home screen that splits every unit into online and offline, coloured against each unit’s own temperature range',
