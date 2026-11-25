@@ -396,7 +396,7 @@
       if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
     });
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.01 });
-  $$('.h2, .contact__big, .card, .log__list li, .kit').forEach((el) => io.observe(el));
+  $$('.h2, .contact__big, .card, .log__list li, .kit, .me').forEach((el) => io.observe(el));
 
   const vis = new IntersectionObserver((entries) => {
     entries.forEach((en) => {

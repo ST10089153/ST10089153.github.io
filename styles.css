@@ -549,6 +549,18 @@ html.js .kit.in .device { opacity: 1; transform: none; }
 /* ---------- log ---------- */
 .log { padding: 18vh var(--pad) 16vh; border-top: 1px solid var(--line); }
 .log__intro { max-width: 520px; color: var(--ink-2); margin: 5vh 0 9vh auto; font-size: 17px; line-height: 1.55; }
+/* Photo beside the changelog heading */
+.log__head { display: grid; grid-template-columns: 1fr minmax(240px, 360px); gap: 6vw; align-items: end; margin-bottom: 9vh; }
+.log__head .log__intro { margin: 5vh 0 0; }
+.me { margin: 0; }
+.me__frame { position: relative; overflow: hidden; border-radius: 6px; aspect-ratio: 4 / 5; background: var(--bg-2); }
+.me__frame img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); transition: transform 1.6s var(--ease); }
+html.js .me .me__frame { clip-path: inset(100% 0 0 0 round 6px); transition: clip-path 1.3s var(--ease-io); }
+html.js .me.in .me__frame { clip-path: inset(0 0 0 0 round 6px); }
+.me.in .me__frame img { transform: scale(1.02); }
+.me:hover .me__frame img { transform: scale(1.07); }
+.me figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; color: var(--ink-2); }
+.me figcaption span:first-child { color: var(--accent); }
 .log__list { list-style: none; border-top: 1px solid var(--line); }
 .log__list li {
   display: grid; grid-template-columns: 140px 1fr 110px; gap: 24px; align-items: baseline;
@@ -715,6 +727,8 @@ html.js .log__list li.in { opacity: 1; transform: none; }
   .key, .key__cap { border-radius: 9px; }
   .key__cap { padding: 7px; }
   .log__list li { grid-template-columns: 1fr; gap: 8px; }
+  .log__head { grid-template-columns: 1fr; gap: 5vh; }
+  .me { max-width: 340px; }
   .log__tag { justify-self: start; }
   .case__meta { grid-template-columns: 1fr 1fr; }
   .case__cols { grid-template-columns: 1fr; }
@@ -733,5 +747,5 @@ html.js .log__list li.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   html.js .reveal-up, html.js .line > span, html.js .hero__first .ch, html.js .log__list li, html.js .device { opacity: 1 !important; transform: none !important; }
-  html.js .hero__last, html.js .card__plate { clip-path: none !important; }
+  html.js .hero__last, html.js .card__plate, html.js .me .me__frame { clip-path: none !important; }
 }
