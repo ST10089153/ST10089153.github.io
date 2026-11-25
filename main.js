@@ -58,7 +58,7 @@
       links: [['Live demo', 'https://skillpath-demo.onrender.com'], ['GitHub', 'https://github.com/ST10089153/Skillpath-2026']],
     },
     stylu: {
-      num: '05', title: 'Stylu', plate: ['#f4c9db', '#dd93b4'],
+      num: '06', title: 'Stylu', plate: ['#f4c9db', '#dd93b4'],
       lead: 'Stylu turns your closet into a digital wardrobe.',
       meta: [['Role', 'Team of three'], ['When', '2025'], ['Platform', 'Android 8.1+'], ['Stack', 'Kotlin, MVVM, Room, Supabase']],
       problem: 'You photograph your clothes, the app cuts out the background, and from there you build outfits on a drag-and-drop canvas, plan what to wear on a calendar and check the week’s weather before you pick.',
@@ -89,26 +89,28 @@
       links: [['GitHub', 'https://github.com/ST10089153/cashoo-budget-app-2025'], ['Demo video', 'https://youtu.be/RzWKK3HNCH4']],
     },
     payments: {
-      num: '06', title: 'Secure payments portal', plate: ['#ff7a3d', '#c83c0b'],
-      lead: 'A full-stack banking portal for international SWIFT payments, where most of the code is about keeping attackers out.',
+      num: '03', title: 'Secure payments portal', plate: ['#6a5cf0', '#21164f'],
+      lead: 'A full-stack banking portal for international SWIFT payments. Customers send payments; bank staff verify each one and pass the batch on to SWIFT. Most of the code is about keeping attackers out.',
       meta: [['Role', 'Team of three'], ['When', '2025'], ['Platform', 'Web'], ['Stack', 'React, Node.js, Express, MongoDB']],
-      problem: 'Payments portals are a magnet for attacks, so the brief was less about features and more about defence: every layer of this one was built with an attacker in mind.',
+      problem: 'The brief was to build something a bank could plausibly put in front of customers. There’s no public sign-up: staff open accounts after checking ID (South African ID numbers are validated with the Luhn checksum), customers must replace their temporary password before doing anything else, and every payment goes from pending to verified to submitted.',
       did: [
-        'Passwords hashed with bcrypt plus a pepper',
-        'JWT sessions, served over HTTPS',
-        'Rate limiting and account lockout against brute-force attempts',
-        'Whitelisted input on every field',
-        'A DevSecOps CI pipeline',
+        'bcrypt with 12 salt rounds, plus an application-level pepper on customer passwords',
+        'Login limited to 5 attempts per IP per 15 minutes, and accounts lock after 5 failures',
+        'Short-lived JWTs over HTTPS (TLS 1.2+, restricted ciphers)',
+        'Whitelist validation on every field, plus NoSQL-injection and parameter-pollution guards',
+        'Helmet with a strict Content Security Policy, HSTS and X-Frame-Options: DENY',
+        'Role checks on every staff route: a customer token gets a 403 from the staff API',
+        'DevSecOps pipeline with CodeQL, Semgrep, Gitleaks, TruffleHog, npm audit and OWASP Dependency-Check, plus SonarCloud',
       ],
-      note: 'The full write-up, with every protection explained, is in the repo.',
-      gallery: [['type', 'SWIFT']],
-      links: [['GitHub', 'https://github.com/ST10089153/secure-payments-portal-2025']],
+      note: 'Built for APDS7311 (Application Development Security). The repo has the full threat-by-threat write-up and four demo videos.',
+      gallery: [['pp-landing', 'w'], ['pp-customer', 'w'], ['pp-employee', 'w'], ['pp-password', 'w']],
+      links: [['GitHub', 'https://github.com/ST10089153/secure-payments-portal-2025'], ['Final showcase video', 'https://youtu.be/VNd0L2NnGfo'], ['Walkthrough', 'https://youtu.be/odEApifJag4']],
     },
     tms: {
-      num: '03', title: 'TMS for TxDev Systems', plate: ['#1d5577', '#0a1d2c'],
-      lead: 'A working Android app that TxDev Systems’ customers use to keep an eye on their temperature sensors, with live readings, history charts, reports and push alerts when something goes wrong.',
-      meta: [['Client', 'TxDev Systems, in use'], ['Team', 'Six students'], ['When', 'Jul – Nov 2025'], ['Stack', 'Kotlin, MVVM, Retrofit, FCM']],
-      problem: 'Temperature-sensitive stock can spoil within hours if a unit warms up or a door is left open overnight. TxDev’s IoT units already collected the readings, but customers needed to check on their units from anywhere and hear about a problem as soon as it happened, not the next morning. We built the app against TxDev’s real backend.',
+      num: '04', title: 'TMS for TxDev Systems', plate: ['#1d5577', '#0a1d2c'],
+      lead: 'TxDev Systems came to our team with a brief, and six of us built them an Android app for keeping an eye on their temperature sensors: live readings, history charts, reports and push alerts when something goes wrong.',
+      meta: [['Client', 'TxDev Systems'], ['Team', 'Six students, built free of charge'], ['When', 'Jul – Nov 2025'], ['Stack', 'Kotlin, MVVM, Retrofit, FCM']],
+      problem: 'Temperature-sensitive stock can spoil within hours if a unit warms up or a door is left open overnight. TxDev’s IoT units already collected the readings, but customers needed to check on their units from anywhere and hear about a problem as soon as it happened, not the next morning. TxDev approached our team, and we built the app free of charge against their real backend.',
       did: [
         'Home screen that splits every unit into online and offline, coloured against each unit’s own temperature range',
         'Gauges drawn as custom Canvas views, plus history charts by day, week, month or a custom range',
@@ -125,12 +127,12 @@
         'Reworked the sign-in screen',
         'Worked on the CI pipeline and the network security config',
       ],
-      note: 'The app is in use by TxDev Systems, so the code is private and I can’t share screenshots. The panels above are illustrations, not the real screens. I’m happy to talk through the code in an interview.',
+      note: 'The app belongs to TxDev Systems, so the code is private and I can’t share screenshots. The panels above are illustrations, not the real screens. I’m happy to talk through the code in an interview.',
       gallery: [['ill', 'gauge'], ['ill', 'alerts'], ['ill', 'flow']],
       links: [['Showcase repo', 'https://github.com/ST10089153/txdev-tms-app-2025']],
     },
     municipal: {
-      num: '04', title: 'Municipal services portal', plate: ['#17a3a1', '#0b6466'],
+      num: '05', title: 'Municipal services portal', plate: ['#17a3a1', '#0b6466'],
       lead: 'A Windows desktop app for reporting potholes, water leaks and broken streetlights, running on data structures I wrote from scratch.',
       meta: [['Role', 'Solo'], ['When', '2025'], ['Platform', 'Windows'], ['Stack', 'C#, WinForms, xUnit, GitHub Actions']],
       problem: 'Residents report problems, browse local events and track the status of service requests. The real work is underneath: every lookup, index and dependency check runs on five generic data structures I wrote by hand. None of them wraps a built-in collection.',
@@ -164,7 +166,7 @@
     },
   };
   // Featured four first (most impressive), then the "also built" list.
-  const ORDER = ['court', 'skillpath', 'tms', 'municipal', 'stylu', 'payments', 'cashoo', 'cmcs'];
+  const ORDER = ['court', 'skillpath', 'payments', 'tms', 'municipal', 'stylu', 'cashoo', 'cmcs'];
 
   // [keyboard key, label, category, category name, where it shows up]
   const SKILLS = [
@@ -471,6 +473,7 @@
       item.innerHTML = `<span class="mono">Secured / hardened</span><b>${src.slice(5)}</b>`;
     } else if (src.startsWith('phone:')) {
       item.classList.add('preview__phone');
+      if (row.dataset.previewBg) item.style.background = `radial-gradient(120% 120% at 50% 0%, ${row.dataset.previewBg}, #151615)`;
       item.innerHTML = `<img src="${src.slice(6)}" alt="" loading="lazy" decoding="async">`;
     } else {
       item.innerHTML = `<img src="${src}" alt="" loading="lazy" decoding="async">`;
