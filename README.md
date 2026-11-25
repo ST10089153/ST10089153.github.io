@@ -18,6 +18,7 @@ Then open http://localhost:5178.
 - `styles.css`: the look (colours are CSS variables at the top; the light "paper" theme is under `[data-theme="paper"]`)
 - `main.js`: the interactions. Case study text lives in `PROJECTS` and the keypad skills in `SKILLS` at the top of the file
 - `assets/img/`: screenshots, exported to WebP from each project's repo
+- `assets/Charne_Janse_van_Rensburg_CV_2026.pdf`: the public CV (no phone number). It's generated from `../cv/cv.html` by running `python build.py` in the `cv` folder, which also writes the full version for employers
 
 ## What's in it
 

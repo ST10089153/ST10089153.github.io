@@ -764,7 +764,7 @@
      Magnetic elements
      --------------------------------------------------------- */
   if (fine && !reduce) {
-    $$('.badge, .live, .case__close').forEach((el) => {
+    $$('.badge, .live, .case__close, .cv-btn').forEach((el) => {
       el.addEventListener('pointermove', (e) => {
         const r = el.getBoundingClientRect();
         const x = (e.clientX - r.left - r.width / 2) * 0.28;
