@@ -468,7 +468,10 @@ html.has-hover .preview { display: block; }
   font-size: clamp(56px, 9.5vw, 180px); line-height: 1; letter-spacing: -.03em;
   font-variation-settings: "opsz" 144, "wght" 280;
 }
-.marquee__track i { font-style: normal; color: var(--accent); display: inline-block; font-size: .6em; vertical-align: .25em; margin: 0 .15em; }
+.marquee__track i {
+  display: inline-block; width: .16em; height: .16em; margin: 0 .38em;
+  background: var(--accent); transform: rotate(45deg); vertical-align: .2em;
+}
 
 /* ---------- kit / device ---------- */
 .kit { padding: 18vh var(--pad) 16vh; }
@@ -549,18 +552,41 @@ html.js .kit.in .device { opacity: 1; transform: none; }
 /* ---------- log ---------- */
 .log { padding: 18vh var(--pad) 16vh; border-top: 1px solid var(--line); }
 .log__intro { max-width: 520px; color: var(--ink-2); margin: 5vh 0 9vh auto; font-size: 17px; line-height: 1.55; }
-/* Photo beside the changelog heading */
-.log__head { display: grid; grid-template-columns: 1fr minmax(240px, 360px); gap: 6vw; align-items: end; margin-bottom: 9vh; }
+/* Photo beside the changelog heading. On the dark theme its black edges
+   melt into the page, it bleeds off the right edge and a few lights twinkle. */
+.log__head { display: grid; grid-template-columns: 1fr minmax(280px, 36vw); gap: 4vw; align-items: center; margin-bottom: 7vh; }
 .log__head .log__intro { margin: 5vh 0 0; }
-.me { margin: 0; }
-.me__frame { position: relative; overflow: hidden; border-radius: 6px; aspect-ratio: 4 / 5; background: var(--bg-2); }
-.me__frame img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); transition: transform 1.6s var(--ease); }
-html.js .me .me__frame { clip-path: inset(100% 0 0 0 round 6px); transition: clip-path 1.3s var(--ease-io); }
-html.js .me.in .me__frame { clip-path: inset(0 0 0 0 round 6px); }
-.me.in .me__frame img { transform: scale(1.02); }
-.me:hover .me__frame img { transform: scale(1.07); }
-.me figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; color: var(--ink-2); }
+.me { margin: 0 calc(var(--pad) * -1) 0 0; position: relative; isolation: isolate; }
+.me::before { /* the lights spill onto the page */
+  content: ""; position: absolute; inset: -12% 0 -6% -28%; z-index: -1; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(236,231,219,.09), rgba(169,220,201,.04) 55%, transparent);
+}
+.me__frame {
+  position: relative; overflow: hidden; aspect-ratio: 3 / 4;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24%), linear-gradient(to bottom, transparent 0, #000 10%, #000 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 24%), linear-gradient(to bottom, transparent 0, #000 10%, #000 80%, transparent 100%);
+  mask-composite: intersect;
+}
+.me__move { position: absolute; inset: -7% 0; will-change: transform; }
+.me__move img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 1.8s var(--ease); }
+.me.in .me__move img { transform: scale(1); }
+.me:hover .me__move img { transform: scale(1.03); }
+html.js .me .me__frame { opacity: 0; transition: opacity 1.6s var(--ease); }
+html.js .me.in .me__frame { opacity: 1; }
+.me__twinkle i {
+  position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 18%, rgba(255,255,255,.55) 32%, transparent 70%);
+  opacity: 0; animation: twinkle var(--t) ease-in-out var(--d) infinite;
+}
+@keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(.4); } 45% { opacity: .95; transform: scale(1.25); } }
+.me figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 4px; padding: 0 var(--pad) 0 24%; color: var(--ink-2); }
 .me figcaption span:first-child { color: var(--accent); }
+/* Paper theme: a dark photo can't melt into cream, so frame it instead */
+[data-theme="paper"] .me { margin-right: 0; }
+[data-theme="paper"] .me::before { display: none; }
+[data-theme="paper"] .me__frame { -webkit-mask-image: none; mask-image: none; border-radius: 6px; }
+[data-theme="paper"] .me figcaption { padding: 8px 0 0; }
 .log__list { list-style: none; border-top: 1px solid var(--line); }
 .log__list li {
   display: grid; grid-template-columns: 140px 1fr 110px; gap: 24px; align-items: baseline;
@@ -727,8 +753,14 @@ html.js .log__list li.in { opacity: 1; transform: none; }
   .key, .key__cap { border-radius: 9px; }
   .key__cap { padding: 7px; }
   .log__list li { grid-template-columns: 1fr; gap: 8px; }
-  .log__head { grid-template-columns: 1fr; gap: 5vh; }
-  .me { max-width: 340px; }
+  .log__head { grid-template-columns: 1fr; gap: 2vh; }
+  .me { margin: 0 calc(var(--pad) * -1); }
+  .me__frame {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 82%, transparent 100%);
+  }
+  .me figcaption { padding: 0 var(--pad); }
+  [data-theme="paper"] .me { margin: 0; }
   .log__tag { justify-self: start; }
   .case__meta { grid-template-columns: 1fr 1fr; }
   .case__cols { grid-template-columns: 1fr; }
@@ -747,5 +779,7 @@ html.js .log__list li.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   html.js .reveal-up, html.js .line > span, html.js .hero__first .ch, html.js .log__list li, html.js .device { opacity: 1 !important; transform: none !important; }
-  html.js .hero__last, html.js .card__plate, html.js .me .me__frame { clip-path: none !important; }
+  html.js .hero__last, html.js .card__plate { clip-path: none !important; }
+  html.js .me .me__frame { opacity: 1 !important; }
+  .me__twinkle { display: none; }
 }
