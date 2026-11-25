@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charné Janse van Rensburg — Software Developer</title>
+<meta name="description" content="Software developer in South Africa. I build things people actually use: Court Companion on the App Store, SkillPath, Stylu, Cashoo and more.">
+<meta property="og:title" content="Charné Janse van Rensburg — Software Developer">
+<meta property="og:description" content="I build things people actually use.">
+<meta property="og:url" content="https://st10089153.github.io/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://st10089153.github.io/">
+<meta name="theme-color" content="#151615">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151615'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' text-anchor='middle' fill='%23ff5b1f'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,200..900,0..100;1,9..144,200..900,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Before paint: theme + js flag, so nothing flashes.
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    try {
+      var t = localStorage.getItem('cj-theme'); if (t) d.dataset.theme = t;
+      var c = localStorage.getItem('cj-cursor'); if (c) d.dataset.cursor = c;
+      if (sessionStorage.getItem('cj-loaded')) d.classList.add('no-loader');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__top mono"><span>CJVR / Portfolio</span><span>Booting…</span></div>
+  <div class="loader__count"><span class="loader__num">000</span></div>
+  <div class="loader__bar"><i></i></div>
+</div>
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__ring"><span class="cursor__halo"></span><span class="cursor__disc"><span class="cursor__label"></span></span></div>
+  <div class="cursor__arrow"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav__left">
+    <a href="#top" class="nav__logo mono" data-cursor="link">CJVR<sup>©26</sup></a>
+    <button class="switch mono" id="themeSwitch" aria-label="Toggle light and dark theme" data-cursor="link">
+      <span class="switch__track"><span class="switch__dot"></span></span><span class="switch__txt">Dark</span>
+    </button>
+  </div>
+  <nav class="nav__links mono" aria-label="Primary">
+    <a href="#work" data-cursor="link">Work</a><span>|</span>
+    <a href="#kit" data-cursor="link">Kit</a><span>|</span>
+    <a href="#log" data-cursor="link">About</a><span>|</span>
+    <a href="#contact" data-cursor="link">Contact</a>
+  </nav>
+  <div class="nav__right mono">
+    <div class="cursor-pick" role="group" aria-label="Choose a cursor">
+      <span class="cursor-pick__lbl">Cursor</span>
+      <button data-set-cursor="ink" aria-label="Ink cursor" data-cursor="link"><svg viewBox="0 0 12 12"><path d="M2 1l8 5-3.6.8L8.2 11 6.6 11.6 4.9 7.5 2 10z"/></svg></button>
+      <button data-set-cursor="pixel" aria-label="8-bit cursor" data-cursor="link"><svg viewBox="0 0 12 12" shape-rendering="crispEdges"><path d="M2 1h1v1h1v1h1v1h1v1h1v1h1v1h1v1H7v1h1v2H7v-1H6V9H5v1H4v1H3V1z" transform="translate(-0.5,0)"/></svg></button>
+      <button data-set-cursor="system" aria-label="System cursor" data-cursor="link"><svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="3.2" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+    </div>
+    <span class="nav__clock"><span id="clock">--:--:--</span> SAST</span>
+  </div>
+  <div class="nav__progress"><i></i></div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero__meta mono">
+      <span class="reveal-up">Software developer</span>
+      <span class="reveal-up">South Africa</span>
+      <span class="reveal-up">BCA — Emeris University</span>
+      <span class="reveal-up">Honours, 2026</span>
+    </div>
+
+    <h1 class="hero__name" aria-label="Charné Janse van Rensburg">
+      <span class="hero__first" aria-hidden="true" data-proximity>Charné</span>
+      <span class="hero__last" aria-hidden="true"><em>Janse van Rensburg</em></span>
+    </h1>
+
+    <div class="hero__foot">
+      <p class="hero__line"><span class="reveal-up">I build things people</span> <span class="reveal-up"><em>actually use.</em></span></p>
+      <a class="badge" href="#work" aria-label="Scroll to work" data-cursor="view" data-cursor-label="Work">
+        <svg viewBox="0 0 200 200" class="badge__ring">
+          <defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+          <text><textPath href="#circ" textLength="486" lengthAdjust="spacing">DESIGNED · BUILT · SHIPPED · FIXED · </textPath></text>
+        </svg>
+        <span class="badge__arrow">↓</span>
+      </a>
+      <a class="live mono" href="https://apps.apple.com/za/app/court-companion/id6758733477" target="_blank" rel="noopener" data-cursor="link">
+        <span class="live__dot"></span>Court Companion — live on the App Store ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <section class="statement" aria-label="About">
+    <div class="label mono"><span>(01)</span><span>Hello</span></div>
+    <p class="statement__text" data-words>
+      I'm a software developer in South Africa who likes building things people <em>actually use.</em>
+      I designed, built and shipped a paid app to the App Store <em>on my own,</em> helped build an app that
+      <em>a real company's customers</em> rely on, and I'm spending my Honours year on an engine that tells graduates
+      <em>which one skill</em> to learn next.
+    </p>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="work" id="work" aria-label="Selected work">
+    <div class="work__sticky" aria-hidden="true">
+      <div class="work__title">
+        <span>Selected</span>
+        <span><em>Work</em><sup class="mono">(05)</sup></span>
+      </div>
+    </div>
+
+    <div class="work__grid">
+      <article class="card card--a" data-project="court" data-speed="0.08" data-cursor="view" tabindex="0" role="button" aria-label="Open Court Companion case study">
+        <div class="card__plate" style="--plate:#2f54eb;--plate-2:#1c36b8">
+          <span class="card__tag mono">Solo · paid on the App Store · v1.2.8</span>
+          <div class="phones">
+            <img class="phone phone--l" src="assets/img/cc-search.webp" alt="" loading="lazy" decoding="async" width="520" height="1126">
+            <img class="phone phone--c" src="assets/img/cc-advocate.webp" alt="Court Companion advocate dashboard" loading="lazy" decoding="async" width="520" height="1126">
+            <img class="phone phone--r" src="assets/img/cc-calendar.webp" alt="" loading="lazy" decoding="async" width="520" height="1126">
+          </div>
+        </div>
+        <div class="card__info">
+          <span class="mono card__num">01</span>
+          <h3>Court Companion</h3>
+          <p>Connects South African advocates with the law students who want to watch them in court.</p>
+          <span class="mono card__stack">React Native · Expo · Firebase — 2025–26</span>
+        </div>
+      </article>
+
+      <article class="card card--b" data-project="skillpath" data-speed="-0.06" data-cursor="view" tabindex="0" role="button" aria-label="Open SkillPath case study">
+        <div class="card__plate" style="--plate:#f2775e;--plate-2:#d4503a">
+          <span class="card__tag mono">AI CV reader · 105 tests · live demo</span>
+          <div class="phones">
+            <img class="phone phone--l" src="assets/img/sp-why.webp" alt="" loading="lazy" decoding="async" width="520" height="1125">
+            <img class="phone phone--c" src="assets/img/sp-rec.webp" alt="SkillPath recommending a skill" loading="lazy" decoding="async" width="520" height="1125">
+            <img class="phone phone--r" src="assets/img/sp-path.webp" alt="" loading="lazy" decoding="async" width="520" height="1125">
+          </div>
+        </div>
+        <div class="card__info">
+          <span class="mono card__num">02</span>
+          <h3>SkillPath</h3>
+          <p>Reads a graduate's CV, picks the one skill worth learning next and teaches it in six short steps.</p>
+          <span class="mono card__stack">Python · FastAPI · React Native · Docker — 2026</span>
+        </div>
+      </article>
+
+      <article class="card card--c" data-project="tms" data-speed="0.12" data-cursor="view" tabindex="0" role="button" aria-label="Open TMS for TxDev Systems case study">
+        <div class="card__plate" style="--plate:#1d5577;--plate-2:#0a1d2c">
+          <span class="card__tag mono">Real client · in use · team of six</span>
+          <div class="tms" aria-hidden="true">
+            <div class="tms__gauge">
+              <svg viewBox="0 0 200 200">
+                <defs><linearGradient id="tmsG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#a9dcc9"/><stop offset="1" stop-color="#ff5b1f"/></linearGradient></defs>
+                <path class="tms__track" d="M 43.4 156.6 A 80 80 0 1 1 156.6 156.6"/>
+                <path class="tms__value" d="M 43.4 156.6 A 80 80 0 1 1 156.6 156.6" pathLength="100" stroke="url(#tmsG)"/>
+              </svg>
+              <div class="tms__read"><span class="mono">Cold room</span><b><span class="tms__temp">4.2</span>°</b><span class="mono">Min 2° · Max 8°</span></div>
+            </div>
+            <div class="tms__alerts">
+              <div class="tms__alert tms__alert--hot mono"><i></i>Temperature too high</div>
+              <div class="tms__alert mono"><i></i>Door left open · 6 min</div>
+              <div class="tms__alert mono"><i></i>Low battery</div>
+            </div>
+          </div>
+          <span class="card__note mono">Illustration · the app is private</span>
+        </div>
+        <div class="card__info">
+          <span class="mono card__num">03</span>
+          <h3>TMS for TxDev Systems</h3>
+          <p>A working Android app TxDev's customers use to watch their temperature sensors, with live gauges, history charts and push alerts.</p>
+          <span class="mono card__stack">Kotlin · MVVM · Retrofit · Firebase Cloud Messaging — 2025</span>
+        </div>
+      </article>
+
+      <article class="card card--d" data-project="municipal" data-speed="-0.04" data-cursor="view" tabindex="0" role="button" aria-label="Open Municipal services portal case study">
+        <div class="card__plate" style="--plate:#17a3a1;--plate-2:#0b6466">
+          <span class="card__tag mono">Solo · 5 data structures from scratch</span>
+          <div class="windows">
+            <img class="win win--back" src="assets/img/mu-status.webp" alt="" loading="lazy" decoding="async" width="1400" height="884">
+            <img class="win win--mid" src="assets/img/mu-events.webp" alt="" loading="lazy" decoding="async" width="1400" height="884">
+            <img class="win win--front" src="assets/img/mu-menu.webp" alt="Municipal services portal main menu" loading="lazy" decoding="async" width="1000" height="720">
+          </div>
+        </div>
+        <div class="card__info">
+          <span class="mono card__num">04</span>
+          <h3>Municipal services portal</h3>
+          <p>Every lookup, index and dependency check runs on trees, a heap and a graph I wrote by hand, with Dijkstra and Kruskal on top.</p>
+          <span class="mono card__stack">C# · WinForms · xUnit · GitHub Actions — 2025</span>
+        </div>
+      </article>
+
+      <article class="card card--e" data-project="stylu" data-speed="0.08" data-cursor="view" tabindex="0" role="button" aria-label="Open Stylu case study">
+        <div class="card__plate" style="--plate:#f4c9db;--plate-2:#e7a3c0">
+          <span class="card__tag mono">Background removal · offline cache · CI</span>
+          <div class="phones">
+            <img class="phone phone--l" src="assets/img/st-swipe.webp" alt="" loading="lazy" decoding="async" width="520" height="1150">
+            <img class="phone phone--c" src="assets/img/st-outfit.webp" alt="Stylu outfit builder" loading="lazy" decoding="async" width="520" height="1150">
+            <img class="phone phone--r" src="assets/img/st-weather.webp" alt="" loading="lazy" decoding="async" width="520" height="1150">
+          </div>
+        </div>
+        <div class="card__info">
+          <span class="mono card__num">05</span>
+          <h3>Stylu</h3>
+          <p>Photograph your clothes, build outfits on a canvas and plan them around the week's weather.</p>
+          <span class="mono card__stack">Kotlin · MVVM · Room · Supabase — 2025</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ INDEX ============ -->
+  <section class="index" aria-label="More projects">
+    <div class="label mono"><span>(02)</span><span>Also built</span></div>
+    <ul class="index__list">
+      <li class="row" data-project="payments" data-preview="type:SWIFT" data-cursor="view" tabindex="0" role="button">
+        <span class="mono">06</span><span class="row__title">Secure payments portal</span><span class="mono row__stack">React · Node · Express · MongoDB</span><span class="mono">2025</span><span class="row__arrow">↗</span>
+      </li>
+      <li class="row" data-project="cashoo" data-preview="phone:assets/img/ca-avatar.webp" data-cursor="view" tabindex="0" role="button">
+        <span class="mono">07</span><span class="row__title">Cashoo</span><span class="mono row__stack">Kotlin · Firebase · Android</span><span class="mono">2025</span><span class="row__arrow">↗</span>
+      </li>
+      <li class="row" data-project="cmcs" data-preview="assets/img/cm-dash.webp" data-cursor="view" tabindex="0" role="button">
+        <span class="mono">08</span><span class="row__title">Contract monthly claim system</span><span class="mono row__stack">C# · ASP.NET Core MVC</span><span class="mono">2025</span><span class="row__arrow">↗</span>
+      </li>
+    </ul>
+    <div class="preview" aria-hidden="true"><div class="preview__inner"></div></div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Designed <i>✺</i> Built <i>✺</i> Shipped <i>✺</i> Fixed <i>✺</i> Shipped again <i>✺</i>&nbsp;</span>
+      <span>Designed <i>✺</i> Built <i>✺</i> Shipped <i>✺</i> Fixed <i>✺</i> Shipped again <i>✺</i>&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ============ KIT ============ -->
+  <section class="kit" id="kit" aria-label="Skills">
+    <div class="label mono"><span>(03)</span><span>The kit</span></div>
+    <h2 class="h2"><span class="line"><span>What I work with.</span></span><span class="line"><span><em>Go on, press a key.</em></span></span></h2>
+
+    <div class="device" role="group" aria-label="Skills keypad">
+      <div class="device__top">
+        <div class="device__brand mono">CJ-20 <small>skill unit</small></div>
+        <div class="oled" aria-live="polite">
+          <div class="oled__scan"></div>
+          <div class="oled__row mono"><span class="oled__cat">READY</span><span class="oled__idx">--/20</span></div>
+          <div class="oled__name">Press any key</div>
+          <div class="oled__used mono">or type on your keyboard: 1–5, Q–T, A–G, Z–B</div>
+          <div class="oled__bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="device__ctrl">
+          <button class="knob" id="knob" aria-label="Cycle through skills" data-cursor="drag" data-cursor-label="Spin"><span class="knob__cap"><i></i></span></button>
+          <button class="led mono" id="soundBtn" aria-pressed="true" data-cursor="link"><i></i>Sound</button>
+        </div>
+      </div>
+      <div class="keys" id="keys"></div>
+      <div class="device__foot mono"><span>Designed in ZA</span><span>Rev. 2026</span></div>
+    </div>
+  </section>
+
+  <!-- ============ LOG ============ -->
+  <section class="log" id="log" aria-label="Changelog">
+    <div class="label mono"><span>(04)</span><span>Changelog</span></div>
+    <h2 class="h2"><span class="line"><span>Most of these started</span></span><span class="line"><span>as coursework. <em>I kept going.</em></span></span></h2>
+    <p class="log__intro">I moved the best projects to my own account, fixed what needed fixing and wrote a proper README for each, so every repo shows what it does, how it's built and how to run it.</p>
+    <ol class="log__list">
+      <li><span class="mono log__date">2026</span><span class="log__what">Honours at Emeris University. Building <em>SkillPath</em> as my Honours project.</span><span class="mono log__tag">Now</span></li>
+      <li><span class="mono log__date">2026.05</span><span class="log__what">Shipped Court Companion <em>v1.2.8</em>, with fixes going out over the air.</span><span class="mono log__tag">Release</span></li>
+      <li><span class="mono log__date">2026.03</span><span class="log__what">Court Companion passed Apple's review and went <em>live on the App Store.</em></span><span class="mono log__tag">Launch</span></li>
+      <li><span class="mono log__date">2025.12</span><span class="log__what">Started planning and designing <em>Court Companion</em> on my own.</span><span class="mono log__tag">Idea</span></li>
+      <li><span class="mono log__date">2025.11</span><span class="log__what">Finished TMS with a team of six: an Android app <em>TxDev Systems' customers use</em> to watch their temperature sensors.</span><span class="mono log__tag">Client</span></li>
+      <li><span class="mono log__date">2025</span><span class="log__what">Finished my BCA: Stylu, Cashoo, a secure payments portal, a claims system and a municipal portal built on <em>data structures I wrote from scratch.</em></span><span class="mono log__tag">Degree</span></li>
+    </ol>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" aria-label="Contact">
+    <div class="label mono"><span>(05)</span><span>Get in touch</span></div>
+    <h2 class="contact__big"><span class="line"><span>Let's build</span></span><span class="line"><span><em>something</em></span></span><span class="line"><span>people use.</span></span></h2>
+    <button class="email" id="email" data-cursor="copy" data-cursor-label="Copy" aria-label="Copy email address">
+      <span class="email__txt">charnejvr1@gmail.com</span>
+      <span class="email__toast mono">Copied to clipboard ✓</span>
+    </button>
+    <div class="contact__links mono">
+      <a href="mailto:charnejvr1@gmail.com" data-cursor="link">Email ↗</a>
+      <a href="https://github.com/ST10089153" target="_blank" rel="noopener" data-cursor="link">GitHub ↗</a>
+      <a href="https://apps.apple.com/za/app/court-companion/id6758733477" target="_blank" rel="noopener" data-cursor="link">App Store ↗</a>
+      <a href="https://skillpath-demo.onrender.com" target="_blank" rel="noopener" data-cursor="link">SkillPath demo ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer mono">
+  <span>© 2026 Charné Janse van Rensburg</span>
+  <span>Hand-built. No templates.</span>
+  <a href="#top" data-cursor="link">Back to top ↑</a>
+</footer>
+
+<!-- ============ CASE STUDY OVERLAY ============ -->
+<div class="case" id="case" role="dialog" aria-modal="true" aria-labelledby="caseTitle" hidden>
+  <div class="case__panel" data-lenis-prevent>
+    <button class="case__close mono" id="caseClose" data-cursor="close" data-cursor-label="Close">Close ✕</button>
+    <div class="case__body"></div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
