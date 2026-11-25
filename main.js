@@ -26,18 +26,18 @@
   const PROJECTS = {
     court: {
       num: '01', title: 'Court Companion', plate: ['#2f54eb', '#1c36b8'],
-      lead: 'A mobile app that connects South African advocates with the law students who want to watch them in court.',
-      meta: [['Role', 'Solo: idea to App Store'], ['When', 'Dec 2025 – May 2026'], ['Platform', 'iOS, paid on the App Store'], ['Stack', 'React Native, Expo, Firebase']],
+      lead: 'A mobile app I designed and built on my own for the National Bar Council of South Africa. It connects advocates with the law students who want to watch them in court.',
+      meta: [['Client', 'National Bar Council of South Africa'], ['Role', 'Freelance, sole developer'], ['When', 'Dec 2025 – May 2026'], ['Stack', 'React Native, Expo, Firebase']],
       problem: "Law students learn a lot by sitting in on real hearings, but finding out where an advocate will be appearing, and when, usually depends on who you know. Advocates had no simple way to share their court schedule with students either. Court Companion gives advocates a place to post their appearances and gives students a way to follow them.",
       did: [
-        'Planned the features and designed every screen, starting in December 2025',
+        'Took the brief from the Bar Council, planned the features and designed every screen, starting in December 2025',
         'Built it in React Native with Firebase sign-in and a Cloud Firestore database',
         'The role decides the whole navigator, so screens a role shouldn’t reach are never registered',
         'Built-in list of South African courts and cities with autocomplete',
         'Handled signing, the store listing, privacy details and Apple’s review',
         'Released in March 2026, then shipped updates through v1.2.8 with EAS over-the-air fixes',
       ],
-      note: 'It’s a paid app, so the source is private. I’m happy to walk through it on a call or in an interview.',
+      note: 'It’s client work, so the source is private. I’m happy to walk through it on a call or in an interview.',
       gallery: [['cc-login', 'p'], ['cc-advocate', 'p'], ['cc-add', 'p'], ['cc-student', 'p'], ['cc-search', 'p'], ['cc-profile', 'p'], ['cc-calendar', 'p']],
       links: [['App Store', 'https://apps.apple.com/za/app/court-companion/id6758733477'], ['Showcase repo', 'https://github.com/ST10089153/court-companion-2025-2026']],
     },
