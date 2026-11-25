@@ -26,7 +26,7 @@
   const PROJECTS = {
     court: {
       num: '01', title: 'Court Companion', plate: ['#2f54eb', '#1c36b8'],
-      lead: 'A mobile app I designed and built on my own for the National Bar Council of South Africa. It connects advocates with the law students who want to watch them in court.',
+      lead: 'I was the only developer on this app for the National Bar Council of South Africa. It connects advocates with the law students who want to watch them in court.',
       meta: [['Client', 'National Bar Council of South Africa'], ['Role', 'Freelance, sole developer'], ['When', 'Dec 2025 – May 2026'], ['Stack', 'React Native, Expo, Firebase']],
       problem: "Law students learn a lot by sitting in on real hearings, but finding out where an advocate will be appearing, and when, usually depends on who you know. Advocates had no simple way to share their court schedule with students either. Court Companion gives advocates a place to post their appearances and gives students a way to follow them.",
       did: [
